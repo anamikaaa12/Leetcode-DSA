@@ -1,15 +1,27 @@
+import java.util.*;
+
 class Solution {
+
     public boolean uniqueOccurrences(int[] arr) {
-        Map<Integer, Integer> freq = new HashMap<>();
-        for (int x : arr) {
-            freq.put(x, freq.getOrDefault(x, 0) + 1);
+
+        int[] freq = new int[2001];
+
+        for (int num : arr) {
+            freq[num + 1000]++;
         }
 
-        Set<Integer> s = new HashSet<>();
-        for (int x : freq.values()) {
-            s.add(x);
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int count : freq) {
+            if (count == 0)
+                continue;
+
+            if (set.contains(count))
+                return false;
+
+            set.add(count);
         }
 
-        return freq.size() == s.size();
+        return true;
     }
 }
