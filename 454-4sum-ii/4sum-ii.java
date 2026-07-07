@@ -22,8 +22,8 @@ class Solution {
 
                 if (map.containsKey(target)) {
                     count += map.get(target);
-                }
-            }
+                }}
+            
         }
 
         return count;
