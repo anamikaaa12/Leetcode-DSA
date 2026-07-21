@@ -14,4 +14,4 @@ class Solution {
 
         return paths_stack.size();
     }
-}
+};
