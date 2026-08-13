@@ -17,6 +17,6 @@ class Solution {
             res.add(row);
         }
 
-        return res;        
+        return res;     
     }
 }
